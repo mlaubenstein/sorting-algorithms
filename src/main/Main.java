@@ -1,41 +1,49 @@
 package main;
 
 import algorithms.BubbleSort;
+import algorithms.InsertionSort;
 import algorithms.SelectionSort;
+import arrayTools.Tools;
+
+import javax.jnlp.IntegrationService;
+
 
 public class Main {
 
     public static void main (String [] args){
 
-        SelectionSort selectionSort;
-        BubbleSort bubbleSort;
-        Integer [] array;
+        SelectionSort   selectionSort;
+        BubbleSort      bubbleSort;
+        InsertionSort   insertionSort;
+        Integer[]       array;
+        Integer[]       array2;
+        Integer[]       array3;
+
+
+
+
 
         array= new Integer[(int) (Math.random ()*10)+1];
-        arrayGenerate ( array );
-        arrayRead ( array );
+        Tools.arrayRead     ( Tools.arrayGenerate ( array ));
+
+        array2= new Integer[(int) (Math.random ()*10)+1];
+        Tools.arrayRead     ( Tools.arrayGenerate ( array2 ));
+
+        array3= new Integer[(int) (Math.random ()*10)+1];
+        Tools.arrayRead     ( Tools.arrayGenerate ( array3 ));
 
 
         selectionSort = new SelectionSort ();
-        arrayRead ( selectionSort.sort ( array ));
+        Tools.arrayRead ( selectionSort.sort ( array ));
 
         bubbleSort = new BubbleSort ();
-        arrayRead ( bubbleSort.sort (array));
+        Tools.arrayRead ( bubbleSort.sort ( array2));
+
+        insertionSort = new InsertionSort ();
+        Tools.arrayRead ( insertionSort.sort ( array3));
 
 
     }
 
-    public static Integer[] arrayGenerate(Integer[]arrayToGenerate){
-        for (int i = 0; i<arrayToGenerate.length; i++){
-            arrayToGenerate[i]= (int)(Math.random ()*10);
-        }
-        return arrayToGenerate;
-    }
-    public static void arrayRead(Integer[]arrayToRead){
-        for (int i = 0; i<arrayToRead.length; i++){
-            System.out.print ("|"+arrayToRead[i]+"|");
-        }
-        System.out.print ( "\n" );
 
-    }
 }

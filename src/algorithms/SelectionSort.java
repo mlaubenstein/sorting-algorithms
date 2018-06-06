@@ -1,7 +1,9 @@
 package algorithms;
 
 public class SelectionSort {
+
     private static int min;
+
     public static Integer[] sort (Integer[]givenArray){
 
         for (int i = 0; i<givenArray.length-1; i++){
@@ -20,4 +22,5 @@ public class SelectionSort {
         }
         return givenArray;
     }
+
 }
