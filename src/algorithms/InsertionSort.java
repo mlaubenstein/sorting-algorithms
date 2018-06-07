@@ -6,6 +6,7 @@ public class InsertionSort {
 
         for (int i = 0; i<givenArray.length; i++){
             temp = givenArray[i];
+
             while (i>0 && givenArray[i-1]>temp){
                 givenArray[i] = givenArray[i-1];
                 i--;
