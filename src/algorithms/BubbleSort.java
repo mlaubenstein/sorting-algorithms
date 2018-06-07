@@ -1,6 +1,7 @@
 package algorithms;
 
 public class BubbleSort {
+
     private static int temp;
 
     public static Integer[] sort(Integer[]givenArray){
